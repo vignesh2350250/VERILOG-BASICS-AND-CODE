@@ -1,6 +1,3 @@
-// your design
-module andg (A,B,Y);
-  input A,B;
-  output Y;
-  assign Y=A & B;
+module andg(output z, input x, y);
+  and(z, x, y); 
 endmodule

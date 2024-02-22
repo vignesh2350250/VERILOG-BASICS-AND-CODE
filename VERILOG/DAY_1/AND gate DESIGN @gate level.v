@@ -1,3 +1,4 @@
-module andg(output z, input x, y);
-  and(z, x, y); 
+// Code your design here
+module andg(output A, input B, Y);
+  and(A, B, Y); 
 endmodule

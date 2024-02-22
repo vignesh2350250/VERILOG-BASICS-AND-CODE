@@ -1,20 +1,29 @@
-// your testbench
 module andg_tb;
-reg A, B;
-wire Y;
-andg andgate(.A(A),.B(B),.Y(Y));
-initial begin
-  $dumpfile("andg.vcd");
-  $dumpvars(0,andg_tb);  
-end
-initial begin
-  A=1'b0;B=1'b0;
-  #10 A=1'b0;B= 1'b1;
-  #10 A=1'b1;B= 1'b0;
-  #10 A=1'b1;B=1'b1;
-  #10
-  $finish;
-end
-always @(Y)
-  $monitor( "time=%0t \tINPUT VALUES: \t A=%b B=%b \t output value Y =%b",$time,A,B,Y);
+  reg x, y;
+  wire z;
+  
+  // Instantiate the AND gate module
+  andg andgate(.x(x), .y(y), .z(z));
+
+  // Dump waveform information for z only
+  initial begin
+    $dumpfile("andg.vcd");
+    $dumpvars(0, andg_tb);  
+  end
+
+  // Apply input values
+  initial begin
+    x = 1'b0; y = 1'b0;
+    #10 x = 1'b0; y = 1'b1;
+    #10 x = 1'b1; y = 1'b0;
+    #10 x = 1'b1; y = 1'b1;  // Start applying input values at 20 seconds
+    #10
+    $finish;
+  end
+  
+  // Monitor the output and display only the z value between 20 to 30 seconds
+  always @* begin
+   
+    $monitor( "time=%0t \tINPUT VALUES: \t x=%b y=%b \t output value Y =%b",$time,x,y,z);
+  end
 endmodule

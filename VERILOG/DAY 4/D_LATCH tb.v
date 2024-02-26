@@ -7,8 +7,8 @@ module d_latch_tb;
   initial begin
     d <= 0;  
     en <= 0;  
-    rstn <= 0;  
-    #10 rstn <= 1;  
+    rstn <= 1;  
+    #10 rstn <= 0;  
     for (i = 0; i < 5; i=i+1) 
       begin  
          delay = $random;  

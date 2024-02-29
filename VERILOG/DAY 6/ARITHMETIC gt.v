@@ -1,4 +1,4 @@
-module opbw(input [3:0]a,
+module opar(input [3:0]a,
             input [3:0]b,
             output reg [5:0]y1,
             output reg [5:0]y2,

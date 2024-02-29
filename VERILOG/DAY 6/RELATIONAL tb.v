@@ -1,10 +1,10 @@
-module opbw_tb;
+module opbw_re;
   reg [3:0] a, b;
   wire [5:0] y1, y2, y3, y4;
-  opbw jj(a,b,y1,y2,y3,y4);
+  opre jj(a,b,y1,y2,y3,y4);
 
   initial begin
-    $dumpfile("opbw.vcd");
+    $dumpfile("opre.vcd");
     $dumpvars(1);
   end
 

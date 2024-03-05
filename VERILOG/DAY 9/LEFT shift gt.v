@@ -13,7 +13,7 @@ module shiftreg(
       shifted_dout <= 4'b0000;
     end
     else begin
-      shifted_dout <= {val[3:1],din };
+      shifted_dout <= {val[2:0],din };
     end
   end 
 
